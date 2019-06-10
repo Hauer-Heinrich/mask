@@ -243,7 +243,7 @@ class InlineHelper
         if ($childTable == "tt_content") {
             $sql = $GLOBALS["TYPO3_DB"]->exec_SELECTquery(
                 "*", $childTable, $parentid . " = '" . $parentUid .
-                "' AND sys_language_uid IN (-1," . $sysLangUid . ")"
+                "' AND sys_language_uid IN (-1," . $data['sys_language_uid'] . ")"
                 . ' AND ('
                 . $childTable . '.t3ver_wsid=0 OR '
                 . $childTable . '.t3ver_wsid=' . (int)$GLOBALS['BE_USER']->workspace
@@ -255,7 +255,7 @@ class InlineHelper
             $sql = $GLOBALS["TYPO3_DB"]->exec_SELECTquery(
                 "*", $childTable, $parentid . " = '" . $parentUid .
                 "' AND parenttable = '" . $parenttable .
-                "' AND sys_language_uid IN (-1," . $sysLangUid . ")"
+                "' AND sys_language_uid IN (-1," . $data['sys_language_uid'] . ")"
                 . ' AND ('
                 . $childTable . '.t3ver_wsid=0 OR '
                 . $childTable . '.t3ver_wsid=' . (int)$GLOBALS['BE_USER']->workspace
